@@ -8,6 +8,7 @@ const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
 
 mongoose.connect('mongodb://ashraf:ashraf@cluster0-shard-00-00-el9ts.mongodb.net:27017,cluster0-shard-00-01-el9ts.mongodb.net:27017,cluster0-shard-00-02-el9ts.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin');
+mongoose.Promise = global.Promise;
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false })); 
